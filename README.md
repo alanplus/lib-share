@@ -14,9 +14,10 @@
 <meta-data android:name="l_wx_id" android:value="112123213" />
 
 <!-- QQ -->
-<activity android:name="com.tencent.tauth.AuthActivity"
-    			android:launchMode="singleTask"
-    			android:noHistory="true">
+<activity 
+   android:name="com.tencent.tauth.AuthActivity"
+   android:launchMode="singleTask"
+   android:noHistory="true">
     <intent-filter>
         <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.DEFAULT" />
@@ -24,10 +25,11 @@
         <data android:scheme="tencent1106752618" />
     </intent-filter>
 </activity>
-<activity android:name="com.tencent.connect.common.AssistActivity"
-          android:exported="false"
-          android:screenOrientation="portrait"
-          android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+<activity 
+   android:name="com.tencent.connect.common.AssistActivity"
+   android:exported="false"
+   android:screenOrientation="portrait"
+   android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
 <!-- 微信页面 -->
  <activity
@@ -74,7 +76,7 @@ shareDialog.setShareData(textShareData);
 shareDialog.show();
 ```
 
-		2. 分享图片
+2. 分享图片
 
 ```java
 LShareDialog shareDialog = new LShareDialog(activity);
