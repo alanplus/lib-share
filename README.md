@@ -93,6 +93,14 @@ shareDialog.setViewCacheShareData(view);
 shareDialog.show();
 ```
 
+- 混淆
+
+```xml
+-keep class com.tencent.mm.opensdk.** { *;}
+-keep class com.tencent.wxop.** {*;}
+-keep class com.tencent.mm.sdk.** {*;}
+```
+
 
 
 ### 注意事项
