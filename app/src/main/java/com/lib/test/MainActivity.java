@@ -1,9 +1,11 @@
-package com.lib.share;
+package com.lib.test;
 
 import android.view.View;
 
 import com.lib.basex.activity.LActivity;
 import com.lib.basex.activity.LViewModel;
+import com.lib.share.LShareDialog;
+import com.lib.share.R;
 import com.lib.share.data.TextShareData;
 import com.lib.share.databinding.ActivityMainBinding;
 

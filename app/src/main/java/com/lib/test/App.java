@@ -1,4 +1,4 @@
-package com.lib.share;
+package com.lib.test;
 
 import com.lib.basex.LApplication;
 
