@@ -1,0 +1,89 @@
+apply plugin: 'com.android.library'
+
+def lib = rootProject.ext.suportDependencies
+def config = rootProject.ext.android
+
+android {
+    compileSdkVersion config.compileSdkVersion
+    buildToolsVersion config.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion config.minSdkVersion
+        targetSdkVersion config.targetSdkVersion
+        versionCode 100
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            zipAlignEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+    allprojects {
+        repositories {
+            jcenter()
+            mavenCentral()
+            mavenLocal()
+            google()
+            maven { url 'https://jitpack.io' }
+            maven {
+                url 'http://maven.aliyun.com/nexus/content/groups/public/'
+            }
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/MANIFEST.MF'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    api fileTree(dir: "libs", include: ["*.jar"])
+    api lib.appcompat
+    api lib.multidex
+    api lib.appcompatExt
+    api lib.rxjava
+    api lib.rxandroid
+    api lib.nevercrash
+    api lib.simpleActivity
+    api lib.design
+    api lib.glide
+    api lib.okio
+    api lib.okhttp
+    api lib.gson
+    api lib.annotation
+    api lib.recycleView
+    api lib.legacy
+    api lib.design
+    api lib.basex
+
+    // 分享
+    api lib.wechat
+
+}
